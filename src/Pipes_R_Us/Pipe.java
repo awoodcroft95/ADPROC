@@ -30,7 +30,7 @@ public class Pipe {
     public Pipe() {
     }
 
-    public Pipe(int gradeIn, boolean insuIn, boolean reinIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn) {
+    public Pipe(int gradeIn, boolean insuIn, boolean reinIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn) { // general pipes/pipe parent
         this.grade = gradeIn;
         this.insu = insuIn;
         this.rein = reinIn;
@@ -41,7 +41,7 @@ public class Pipe {
         cost = 0;
     }
     
-    public Pipe(int gradeIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn){
+    public Pipe(int gradeIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn){   //pipe 2,3
         this.grade = gradeIn;
         this.chem = chemIn;
         this.colour = colourIn;
@@ -49,7 +49,7 @@ public class Pipe {
         this.diameter = diameterIn;
     }
     
-    public Pipe(int gradeIn, boolean chemIn, double lengthIn, double diameterIn){
+    public Pipe(int gradeIn, boolean chemIn, double lengthIn, double diameterIn){  //pipe1
         this.grade = gradeIn;
         this.chem = chemIn;
         this.length = lengthIn;
