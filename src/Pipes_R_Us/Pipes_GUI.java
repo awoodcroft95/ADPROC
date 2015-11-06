@@ -33,8 +33,8 @@ public class Pipes_GUI extends javax.swing.JFrame {
         Chem = new javax.swing.JCheckBox();
         Grade = new javax.swing.JComboBox();
         noOfPipes = new javax.swing.JTextField();
-        Submit = new javax.swing.JButton();
-        AddOrder = new javax.swing.JButton();
+        submit = new javax.swing.JButton();
+        addOrder = new javax.swing.JButton();
         lengthInput = new javax.swing.JTextField();
         diameterInput = new javax.swing.JTextField();
         jScrollPane9 = new javax.swing.JScrollPane();
@@ -89,17 +89,17 @@ public class Pipes_GUI extends javax.swing.JFrame {
             }
         });
 
-        Submit.setText("Submit Order");
-        Submit.addActionListener(new java.awt.event.ActionListener() {
+        submit.setText("Submit Order");
+        submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SubmitActionPerformed(evt);
+                submitActionPerformed(evt);
             }
         });
 
-        AddOrder.setText("Create Additonal Order");
-        AddOrder.addActionListener(new java.awt.event.ActionListener() {
+        addOrder.setText("Create Additonal Order");
+        addOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddOrderActionPerformed(evt);
+                addOrderActionPerformed(evt);
             }
         });
 
@@ -156,12 +156,12 @@ public class Pipes_GUI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel8)
-                            .addComponent(Submit)
+                            .addComponent(submit)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7))
                         .addGap(22, 22, 22)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AddOrder)
+                    .addComponent(addOrder)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(Grade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(ColourDropDown, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -216,8 +216,8 @@ public class Pipes_GUI extends javax.swing.JFrame {
                     .addComponent(noOfPipes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Submit, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(AddOrder, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(submit, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(addOrder, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(25, 25, 25))
         );
 
@@ -246,13 +246,13 @@ public class Pipes_GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_diameterInputActionPerformed
 
-    private void AddOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddOrderActionPerformed
+    private void addOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOrderActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AddOrderActionPerformed
+    }//GEN-LAST:event_addOrderActionPerformed
 
-    private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SubmitActionPerformed
+    }//GEN-LAST:event_submitActionPerformed
 
     private void noOfPipesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noOfPipesActionPerformed
         // TODO add your handling code here:
@@ -302,13 +302,12 @@ public class Pipes_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddOrder;
     private javax.swing.JCheckBox Chem;
     private javax.swing.JComboBox ColourDropDown;
     private javax.swing.JComboBox Grade;
     private javax.swing.JCheckBox Insulation;
     private javax.swing.JCheckBox Rein;
-    private javax.swing.JButton Submit;
+    private javax.swing.JButton addOrder;
     private javax.swing.JTextField diameterInput;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -322,5 +321,6 @@ public class Pipes_GUI extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane9;
     private javax.swing.JTextField lengthInput;
     private javax.swing.JTextField noOfPipes;
+    private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }

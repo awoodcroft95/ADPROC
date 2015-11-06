@@ -41,7 +41,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                          <Component id="Submit" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="submit" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -49,7 +49,7 @@
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="AddOrder" min="-2" max="-2" attributes="0"/>
+                  <Component id="addOrder" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                       <Component id="Grade" min="-2" max="-2" attributes="0"/>
                       <Component id="ColourDropDown" max="32767" attributes="0"/>
@@ -117,8 +117,8 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Submit" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="AddOrder" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="submit" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="addOrder" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
           </Group>
@@ -176,20 +176,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="noOfPipesActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Submit">
+    <Component class="javax.swing.JButton" name="submit">
       <Properties>
         <Property name="text" type="java.lang.String" value="Submit Order"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SubmitActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="AddOrder">
+    <Component class="javax.swing.JButton" name="addOrder">
       <Properties>
         <Property name="text" type="java.lang.String" value="Create Additonal Order"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddOrderActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addOrderActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="lengthInput">
