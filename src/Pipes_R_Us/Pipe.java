@@ -56,6 +56,14 @@ public class Pipe {
         this.diameter = diameterIn;
     }
     
+    public Pipe(int gradeIn, boolean insuIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn){
+        this.grade = gradeIn;
+        this.insu = insuIn;
+        this.chem = chemIn;
+        this.colour = colourIn;
+        this.length = lengthIn;
+        this.diameter = diameterIn;
+    }
     
 // inherited in indiviual pipe classes
     public void claculateCost() {
