@@ -56,7 +56,7 @@ public class Pipe {
         this.diameter = diameterIn;
     }
     
-    public Pipe(int gradeIn, boolean insuIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn){
+    public Pipe(int gradeIn, boolean insuIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn){ // pipe4
         this.grade = gradeIn;
         this.insu = insuIn;
         this.chem = chemIn;
