@@ -128,7 +128,7 @@
   <SubComponents>
     <Component class="javax.swing.JCheckBox" name="Insulation">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InsulationActionPerformed"/>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="InsulationItemStateChanged"/>
       </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="ColourDropDown">
@@ -148,12 +148,12 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="Rein">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ReinActionPerformed"/>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ReinItemStateChanged"/>
       </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="Chem">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ChemActionPerformed"/>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ChemItemStateChanged"/>
       </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="Grade">
@@ -169,7 +169,6 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="GradeItemStateChanged"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GradeActionPerformed"/>
       </Events>
     </Component>
@@ -195,17 +194,11 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="lengthInput">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lengthInputActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="diameterInput">
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Diamater Input"/>
       </AccessibilityProperties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="diameterInputActionPerformed"/>
-      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane9">
       <AuxValues>

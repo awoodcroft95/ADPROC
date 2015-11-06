@@ -14,6 +14,16 @@ public class Pipes_GUI extends javax.swing.JFrame {
     /**
      * Creates new form Pipes_GUI
      */
+    
+    private double length;
+    private double diameter;
+    private int grade;
+    private boolean insu;
+    private boolean rein;
+    private boolean chem;
+    private int colour;
+    private int numOfPipes;
+    
     public Pipes_GUI() {
         initComponents();
     }
@@ -51,9 +61,9 @@ public class Pipes_GUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Piper Order");
 
-        Insulation.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InsulationActionPerformed(evt);
+        Insulation.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                InsulationItemStateChanged(evt);
             }
         });
 
@@ -69,24 +79,19 @@ public class Pipes_GUI extends javax.swing.JFrame {
             }
         });
 
-        Rein.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ReinActionPerformed(evt);
+        Rein.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ReinItemStateChanged(evt);
             }
         });
 
-        Chem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ChemActionPerformed(evt);
+        Chem.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ChemItemStateChanged(evt);
             }
         });
 
         Grade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5" }));
-        Grade.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                GradeItemStateChanged(evt);
-            }
-        });
         Grade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GradeActionPerformed(evt);
@@ -110,18 +115,6 @@ public class Pipes_GUI extends javax.swing.JFrame {
         addOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addOrderActionPerformed(evt);
-            }
-        });
-
-        lengthInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lengthInputActionPerformed(evt);
-            }
-        });
-
-        diameterInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                diameterInputActionPerformed(evt);
             }
         });
 
@@ -236,42 +229,21 @@ public class Pipes_GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void InsulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsulationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_InsulationActionPerformed
-
-    private void ChemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ChemActionPerformed
-
-    private void ReinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReinActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ReinActionPerformed
-
     private void GradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GradeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_GradeActionPerformed
-
-    private void diameterInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diameterInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_diameterInputActionPerformed
 
     private void addOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOrderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addOrderActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        // TODO add your handling code here:
-        //diameterInputField.getText();
+        // TODO add your handling code here:        
     }//GEN-LAST:event_submitActionPerformed
 
     private void noOfPipesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noOfPipesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_noOfPipesActionPerformed
-
-    private void lengthInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lengthInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lengthInputActionPerformed
 
     private void ColourDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColourDropDownActionPerformed
         // TODO add your handling code here:
@@ -281,10 +253,24 @@ public class Pipes_GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ColourDropDownItemStateChanged
 
-    private void GradeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_GradeItemStateChanged
+    private void InsulationItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_InsulationItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_GradeItemStateChanged
+    }//GEN-LAST:event_InsulationItemStateChanged
 
+    private void ReinItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ReinItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ReinItemStateChanged
+
+    private void ChemItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ChemItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ChemItemStateChanged
+
+    
+    public void getInputs(){
+        diameter  = Double.parseDouble(diameterInput.getText());
+        length = Double.parseDouble(lengthInput.getText());
+        
+    }
     /**
      * @param args the command line arguments
      */

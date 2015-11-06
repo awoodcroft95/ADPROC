@@ -16,8 +16,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Pipes_GUI gui = new Pipes_GUI();
+        new Pipes_GUI().setVisible(true);
         ArrayList<Pipe> userOrder = new ArrayList<Pipe>();
+        
     }
     
 }
