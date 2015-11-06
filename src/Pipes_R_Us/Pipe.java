@@ -7,7 +7,7 @@ package Pipes_R_Us;
 
 /**
  *
- * @author UP730799
+ * @author UP730799 & 
  */
 public class Pipe {
 

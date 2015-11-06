@@ -58,6 +58,11 @@ public class Pipes_GUI extends javax.swing.JFrame {
         });
 
         ColourDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "No Colour(Grey)", "1 Colour", "2 Colour" }));
+        ColourDropDown.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ColourDropDownItemStateChanged(evt);
+            }
+        });
         ColourDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ColourDropDownActionPerformed(evt);
@@ -77,6 +82,11 @@ public class Pipes_GUI extends javax.swing.JFrame {
         });
 
         Grade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5" }));
+        Grade.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                GradeItemStateChanged(evt);
+            }
+        });
         Grade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GradeActionPerformed(evt);
@@ -252,6 +262,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         // TODO add your handling code here:
+        //diameterInputField.getText();
     }//GEN-LAST:event_submitActionPerformed
 
     private void noOfPipesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noOfPipesActionPerformed
@@ -265,6 +276,14 @@ public class Pipes_GUI extends javax.swing.JFrame {
     private void ColourDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColourDropDownActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ColourDropDownActionPerformed
+
+    private void ColourDropDownItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ColourDropDownItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ColourDropDownItemStateChanged
+
+    private void GradeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_GradeItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GradeItemStateChanged
 
     /**
      * @param args the command line arguments
