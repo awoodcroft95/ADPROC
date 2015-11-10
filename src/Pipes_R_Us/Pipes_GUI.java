@@ -271,6 +271,23 @@ public class Pipes_GUI extends javax.swing.JFrame {
         length = Double.parseDouble(lengthInput.getText());
         
     }
+    
+    public void calcType() {
+        if ((grade <= 3 & grade > 0) & (colour == 0) & (!insu) & (!rein)) {
+            ;
+        } else if ((grade <= 4 & grade > 1) & (colour <= 1) & (!insu) & (!rein)) {
+            ;
+        } else if ((grade <= 5 & grade > 1) & (colour <= 2) & (!insu) & (!rein)) {
+            ;
+        } else if ((grade <= 5 & grade > 1) & (colour <= 2) & (!rein)) {
+            ;
+        } else if ((grade <= 5 & grade > 2) & (colour <= 2)) {
+            ;
+        } else {
+            System.out.println("Not a valid pipe type.");
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
