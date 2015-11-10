@@ -12,7 +12,7 @@ package Pipes_R_Us;
 public class Pipe1 extends Pipe {
 
     private double pipeVolume;
-    private double cost;
+    private double cost = 0;
     private double totalCost;
     private double addedCost;
     public int numOfPipes;
@@ -21,8 +21,8 @@ public class Pipe1 extends Pipe {
         super(gradeIn, chemIn, lengthIn, diameterIn);
     }
     
-    public double pipe1Cost(){
-        super.claculateCost();
+    public double pipeCost(){
+        super.calculateCost();
         return super.getCost();
     }
 }

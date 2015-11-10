@@ -51,11 +51,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="addOrder" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="Grade" min="-2" max="-2" attributes="0"/>
+                      <Component id="gradeSelection" min="-2" max="-2" attributes="0"/>
                       <Component id="colourDropDown" max="32767" attributes="0"/>
                       <Component id="Insulation" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="Chem" min="-2" max="-2" attributes="0"/>
-                      <Component id="noOfPipes" alignment="0" max="32767" attributes="0"/>
+                      <Component id="noOfPipesInput" alignment="0" max="32767" attributes="0"/>
                       <Component id="lengthInput" max="32767" attributes="0"/>
                       <Component id="diameterInput" min="-2" pref="103" max="-2" attributes="0"/>
                   </Group>
@@ -88,7 +88,7 @@
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="Grade" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="gradeSelection" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -113,7 +113,7 @@
               <EmptySpace type="unrelated" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="noOfPipes" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="noOfPipesInput" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -127,9 +127,6 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JCheckBox" name="Insulation">
-      <Events>
-        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="InsulationItemStateChanged"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="colourDropDown">
       <Properties>
@@ -141,22 +138,12 @@
           </StringArray>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="colourDropDownItemStateChanged"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="colourDropDownActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="Rein">
-      <Events>
-        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ReinItemStateChanged"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="Chem">
-      <Events>
-        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ChemItemStateChanged"/>
-      </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="Grade">
+    <Component class="javax.swing.JComboBox" name="gradeSelection">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="5">
@@ -168,14 +155,8 @@
           </StringArray>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GradeActionPerformed"/>
-      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="noOfPipes">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="noOfPipesActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JTextField" name="noOfPipesInput">
     </Component>
     <Component class="javax.swing.JButton" name="submit">
       <Properties>

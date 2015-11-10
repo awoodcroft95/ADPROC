@@ -15,12 +15,10 @@ public class Pipe {
     private double diameter;
     private double radius; //calculated in object
     private int grade;
-    private int type; //calculated in object
     private boolean insu;
     private boolean rein;
     private boolean chem;
     private int colour;
-    private String pipecol;
     private double pipeVolume;
     private double cost;
     private double totalCost;
@@ -66,7 +64,7 @@ public class Pipe {
     }
 
 // inherited in indiviual pipe classes
-    public void claculateCost() {
+    public void calculateCost() {
         double lengthInch = length * 39.37;
         radius = diameter / 2;
         double innerRadius = radius * 0.9;
@@ -120,6 +118,11 @@ public class Pipe {
     public double getCost() {
         return this.totalCost;
     }
+    
+    //public double pipeCost(){
+    //    this.calculateCost();
+    //    return this.getCost();
+    //}
 
     //needs to be moved to main and used to validate user input
     
