@@ -5,9 +5,11 @@
  */
 package Pipes_R_Us;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author UP730799
+ * @author UP730799, UP733640
  */
 public class Pipes_GUI extends javax.swing.JFrame {
 
@@ -23,6 +25,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
     private boolean chem;
     private int colour;
     private int numOfPipes;
+    ArrayList<Pipe> userOrder = new ArrayList<Pipe>();
     
     public Pipes_GUI() {
         initComponents();
@@ -38,7 +41,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         Insulation = new javax.swing.JCheckBox();
-        ColourDropDown = new javax.swing.JComboBox();
+        colourDropDown = new javax.swing.JComboBox();
         Rein = new javax.swing.JCheckBox();
         Chem = new javax.swing.JCheckBox();
         Grade = new javax.swing.JComboBox();
@@ -67,15 +70,15 @@ public class Pipes_GUI extends javax.swing.JFrame {
             }
         });
 
-        ColourDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "No Colour(Grey)", "1 Colour", "2 Colour" }));
-        ColourDropDown.addItemListener(new java.awt.event.ItemListener() {
+        colourDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "No Colour(Grey)", "1 Colour", "2 Colour" }));
+        colourDropDown.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                ColourDropDownItemStateChanged(evt);
+                colourDropDownItemStateChanged(evt);
             }
         });
-        ColourDropDown.addActionListener(new java.awt.event.ActionListener() {
+        colourDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ColourDropDownActionPerformed(evt);
+                colourDropDownActionPerformed(evt);
             }
         });
 
@@ -167,7 +170,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
                     .addComponent(addOrder)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(Grade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ColourDropDown, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(colourDropDown, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Insulation)
                         .addComponent(Chem)
                         .addComponent(noOfPipes)
@@ -199,7 +202,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
                     .addComponent(Grade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ColourDropDown, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(colourDropDown, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,13 +248,13 @@ public class Pipes_GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_noOfPipesActionPerformed
 
-    private void ColourDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColourDropDownActionPerformed
+    private void colourDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colourDropDownActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ColourDropDownActionPerformed
+    }//GEN-LAST:event_colourDropDownActionPerformed
 
-    private void ColourDropDownItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ColourDropDownItemStateChanged
+    private void colourDropDownItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_colourDropDownItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_ColourDropDownItemStateChanged
+    }//GEN-LAST:event_colourDropDownItemStateChanged
 
     private void InsulationItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_InsulationItemStateChanged
         // TODO add your handling code here:
@@ -269,20 +272,26 @@ public class Pipes_GUI extends javax.swing.JFrame {
     public void getInputs(){
         diameter  = Double.parseDouble(diameterInput.getText());
         length = Double.parseDouble(lengthInput.getText());
-        
+        colour = colourDropDown.getSelectedIndex();
+        //finish getting inputs
     }
     
     public void calcType() {
         if ((grade <= 3 & grade > 0) & (colour == 0) & (!insu) & (!rein)) {
-            ;
+            Pipe1 newpipe = new Pipe1(grade, chem, length, diameter);
+            userOrder.add(newpipe);
         } else if ((grade <= 4 & grade > 1) & (colour <= 1) & (!insu) & (!rein)) {
-            ;
+            Pipe2 newpipe = new Pipe2(grade, chem, colour, length, diameter);
+            userOrder.add(newpipe);;
         } else if ((grade <= 5 & grade > 1) & (colour <= 2) & (!insu) & (!rein)) {
-            ;
+            Pipe3 newpipe = new Pipe3(grade, chem, colour, length, diameter);
+            userOrder.add(newpipe);;
         } else if ((grade <= 5 & grade > 1) & (colour <= 2) & (!rein)) {
-            ;
+            Pipe4 newpipe = new Pipe4(grade, insu, chem, colour, length, diameter);
+            userOrder.add(newpipe);;
         } else if ((grade <= 5 & grade > 2) & (colour <= 2)) {
-            ;
+            Pipe5 newpipe = new Pipe5(grade, insu, rein, chem, colour, length, diameter);
+            userOrder.add(newpipe);;
         } else {
             System.out.println("Not a valid pipe type.");
         }
@@ -325,11 +334,11 @@ public class Pipes_GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox Chem;
-    private javax.swing.JComboBox ColourDropDown;
     private javax.swing.JComboBox Grade;
     private javax.swing.JCheckBox Insulation;
     private javax.swing.JCheckBox Rein;
     private javax.swing.JButton addOrder;
+    private javax.swing.JComboBox colourDropDown;
     private javax.swing.JTextField diameterInput;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
