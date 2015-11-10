@@ -7,7 +7,7 @@ package Pipes_R_Us;
 
 /**
  *
- * @author UP730799 & 
+ * @author UP730799 &
  */
 public class Pipe {
 
@@ -40,23 +40,23 @@ public class Pipe {
         this.diameter = diameterIn;
         cost = 0;
     }
-    
-    public Pipe(int gradeIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn){   //pipe 2,3
+
+    public Pipe(int gradeIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn) {   //pipe 2,3
         this.grade = gradeIn;
         this.chem = chemIn;
         this.colour = colourIn;
         this.length = lengthIn;
         this.diameter = diameterIn;
     }
-    
-    public Pipe(int gradeIn, boolean chemIn, double lengthIn, double diameterIn){  //pipe1
+
+    public Pipe(int gradeIn, boolean chemIn, double lengthIn, double diameterIn) {  //pipe1
         this.grade = gradeIn;
         this.chem = chemIn;
         this.length = lengthIn;
         this.diameter = diameterIn;
     }
-    
-    public Pipe(int gradeIn, boolean insuIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn){ // pipe4
+
+    public Pipe(int gradeIn, boolean insuIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn) { // pipe4
         this.grade = gradeIn;
         this.insu = insuIn;
         this.chem = chemIn;
@@ -64,7 +64,7 @@ public class Pipe {
         this.length = lengthIn;
         this.diameter = diameterIn;
     }
-    
+
 // inherited in indiviual pipe classes
     public void claculateCost() {
         double lengthInch = length * 39.37;
@@ -91,7 +91,7 @@ public class Pipe {
             default:
                 break;
         }
-        
+
         totalCost = cost;
         addedCost = 0;
         if (colour == 1) {
@@ -116,27 +116,11 @@ public class Pipe {
         totalCost = totalCost * numOfPipes;
 
     }
-    
-    public double getCost(){
+
+    public double getCost() {
         return this.totalCost;
     }
-    
+
     //needs to be moved to main and used to validate user input
-    public void calcType(){
-        if((grade <= 3 & grade > 0) & (colour == 0) & (!insu) & (!rein)){
-            this.type = 1;
-        }else if((grade <=4 & grade > 1) & (colour <= 1) & (!insu) & (!rein)){
-            this.type = 2;
-        }else if((grade <=5 & grade > 1) & (colour <= 2) & (!insu) & (!rein)){
-            this.type = 3;
-        }else if((grade <=5 & grade > 1) & (colour <= 2) & (!rein)){
-            this.type = 4;
-        }else if((grade <=5 & grade > 2) & (colour <= 2)){
-            this.type = 5;
-        }else{
-            System.out.println("Not a valid pipe type.");
-        }
-            
-    }
     
 }
