@@ -193,16 +193,11 @@ public class Pipes_GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOrderActionPerformed
-        // TODO add your handling code here:
+        orderProcess();
     }//GEN-LAST:event_addOrderActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        this.getInputs();
-        this.calcType();
-        for (int i = 0; i < userOrder.size(); i++) {
-            userOrder.get(i).calculateCost();
-            System.out.println(userOrder.get(i).getCost());
-        }
+        orderProcess();
     }//GEN-LAST:event_submitActionPerformed
 
     public void getInputs() {
@@ -214,6 +209,15 @@ public class Pipes_GUI extends javax.swing.JFrame {
         insu = Insulation.isSelected();
         chem = Chem.isSelected();
         rein = Rein.isSelected();
+    }
+    
+    public void orderProcess()  {
+        this.getInputs();
+        this.calcType();
+        for (int i = 0; i < userOrder.size(); i++) {
+            userOrder.get(i).calculateCost();
+            System.out.println(userOrder.get(i).getCost());
+        }
     }
 
     public void calcType() {
