@@ -71,7 +71,7 @@
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <Component id="userOrderBox" min="-2" pref="181" max="-2" attributes="0"/>
+              <Component id="orderBox" min="-2" pref="181" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -131,7 +131,7 @@
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="userOrderBox" max="32767" attributes="0"/>
+                      <Component id="orderBox" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -258,7 +258,7 @@
         <Property name="text" type="java.lang.String" value="Number Of Pipes"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="userOrderBox">
+    <Component class="javax.swing.JLabel" name="orderBox">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>

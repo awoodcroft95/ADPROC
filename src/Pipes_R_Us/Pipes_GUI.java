@@ -25,6 +25,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
     private int colour;
     private int numOfPipes;
     ArrayList<Pipe> userOrder = new ArrayList<Pipe>();
+    private String orderText = "";
 
     public Pipes_GUI() {
         initComponents();
@@ -59,7 +60,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        userOrderBox = new javax.swing.JLabel();
+        orderBox = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Piper Order");
@@ -104,11 +105,11 @@ public class Pipes_GUI extends javax.swing.JFrame {
 
         jLabel8.setText("Number Of Pipes");
 
-        userOrderBox.setBackground(new java.awt.Color(255, 255, 255));
-        userOrderBox.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        userOrderBox.setText("User Order");
-        userOrderBox.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        userOrderBox.setOpaque(true);
+        orderBox.setBackground(new java.awt.Color(255, 255, 255));
+        orderBox.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        orderBox.setText("User Order");
+        orderBox.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        orderBox.setOpaque(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,7 +152,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
                                 .addComponent(diameterInput, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Rein))
                         .addGap(27, 27, 27)))
-                .addComponent(userOrderBox, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(orderBox, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -199,7 +200,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
                             .addComponent(addOrder, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(25, 25, 25))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(userOrderBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(orderBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
@@ -211,11 +212,13 @@ public class Pipes_GUI extends javax.swing.JFrame {
     private void addOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOrderActionPerformed
         orderProcess();
         orderWindowUpdate();
+        //need to reset the window
     }//GEN-LAST:event_addOrderActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         orderProcess();
         orderWindowUpdate();
+        //need to show that the order is finialised
     }//GEN-LAST:event_submitActionPerformed
 
     public void getInputs() {
@@ -255,17 +258,16 @@ public class Pipes_GUI extends javax.swing.JFrame {
             Pipe5 newPipe = new Pipe5(grade, insu, rein, chem, colour, length, diameter, numOfPipes);
             userOrder.add(newPipe);
         } else {
-            System.out.println("Not a valid pipe type.");
+            orderBox.setText("<html>" + orderText + "<br>Not A Valid Pipe <br>Please adjust your order" + "</html>");//not sure why not working, will need to fix
         }
     }
     
     public void orderWindowUpdate() {
-        String orderText = "";
         for (int i = 0; i < userOrder.size(); i++){
             orderText = orderText + "<br> <br>" + userOrder.get(i).returnInfo();
             
         }
-        userOrderBox.setText("<html>User Order" + "<br>" + orderText + "</html>");
+        orderBox.setText("<html>User Order" + "<br>" + orderText + "</html>");
     }
 
     /**
@@ -323,7 +325,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane9;
     private javax.swing.JTextField lengthInput;
     private javax.swing.JTextField noOfPipesInput;
+    private javax.swing.JLabel orderBox;
     private javax.swing.JButton submit;
-    private javax.swing.JLabel userOrderBox;
     // End of variables declaration//GEN-END:variables
 }
