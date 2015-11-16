@@ -211,13 +211,11 @@ public class Pipes_GUI extends javax.swing.JFrame {
 
     private void addOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOrderActionPerformed
         orderProcess();
-        orderWindowUpdate();
         //need to reset the window
     }//GEN-LAST:event_addOrderActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         orderProcess();
-        orderWindowUpdate();
         //need to show that the order is finialised
     }//GEN-LAST:event_submitActionPerformed
 
@@ -237,7 +235,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
         this.calcType();
         for (int i = 0; i < userOrder.size(); i++) {
             userOrder.get(i).calculateCost();
-            System.out.println(userOrder.get(i).getCost());
+            orderWindowUpdate();
         }
     }
 
