@@ -10,7 +10,6 @@ package Pipes_R_Us;
  * @author UP730799 &
  */
 public class Pipe {
-
     private double length;
     private double diameter;
     private double radius; //calculated in object
@@ -28,7 +27,7 @@ public class Pipe {
     public Pipe() {
     }
 
-    public Pipe(int gradeIn, boolean insuIn, boolean reinIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn) { // general pipes/pipe parent
+    public Pipe(int gradeIn, boolean insuIn, boolean reinIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn, int numIn) { // general pipes/pipe parent
         this.grade = gradeIn;
         this.insu = insuIn;
         this.rein = reinIn;
@@ -36,40 +35,44 @@ public class Pipe {
         this.colour = colourIn;
         this.length = lengthIn;
         this.diameter = diameterIn;
+        this.numOfPipes = numIn;
         cost = 0;
     }
 
-    public Pipe(int gradeIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn) {   //pipe 2,3
+    public Pipe(int gradeIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn, int numIn) {   //pipe 2,3
         this.grade = gradeIn;
         this.chem = chemIn;
         this.colour = colourIn;
         this.length = lengthIn;
         this.diameter = diameterIn;
+        this.numOfPipes = numIn;
     }
 
-    public Pipe(int gradeIn, boolean chemIn, double lengthIn, double diameterIn) {  //pipe1
+    public Pipe(int gradeIn, boolean chemIn, double lengthIn, double diameterIn, int numIn) {  //pipe1
         this.grade = gradeIn;
         this.chem = chemIn;
         this.length = lengthIn;
         this.diameter = diameterIn;
+        this.numOfPipes = numIn;
     }
 
-    public Pipe(int gradeIn, boolean insuIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn) { // pipe4
+    public Pipe(int gradeIn, boolean insuIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn, int numIn) { // pipe4
         this.grade = gradeIn;
         this.insu = insuIn;
         this.chem = chemIn;
         this.colour = colourIn;
         this.length = lengthIn;
         this.diameter = diameterIn;
+        this.numOfPipes = numIn;
     }
 
 // inherited in indiviual pipe classes
     public void calculateCost() {
-        double lengthInch = length * 39.37;
-        radius = diameter / 2;
+        double lengthInch = this.length * 39.37;
+        radius = this.diameter / 2;
         double innerRadius = radius * 0.9;
         pipeVolume = (((Math.PI * Math.pow(radius, 2)) * lengthInch) - ((Math.PI * Math.pow(innerRadius, 2)) * lengthInch));
-
+        System.out.println(pipeVolume);
         switch (grade) {
             case 1:
                 cost = 0.3 * pipeVolume;
@@ -89,8 +92,9 @@ public class Pipe {
             default:
                 break;
         }
-
+        System.out.println(cost);
         totalCost = cost;
+        System.out.println(totalCost);
         addedCost = 0;
         if (colour == 1) {
             addedCost = (cost * 0.12);
@@ -119,11 +123,9 @@ public class Pipe {
         return this.totalCost;
     }
     
-    //public double pipeCost(){
-    //    this.calculateCost();
-    //    return this.getCost();
-    //}
-
-    //needs to be moved to main and used to validate user input
+    
+    public String returnInfo(){
+        return "Pipe of Length " + this.length + "m <br> Diameter " + this.diameter + "in <br> Cost = " + this.totalCost;
+    }
     
 }
