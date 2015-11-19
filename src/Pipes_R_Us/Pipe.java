@@ -10,6 +10,7 @@ package Pipes_R_Us;
  * @author UP730799 &
  */
 public class Pipe {
+
     private double length;
     private double diameter;
     private double radius; //calculated in object
@@ -116,16 +117,17 @@ public class Pipe {
             totalCost = addedCost + totalCost;
         }
         totalCost = totalCost * numOfPipes;
+        totalCost = Math.round(totalCost * 100);
+        totalCost = totalCost / 100;
 
     }
 
     public double getCost() {
         return this.totalCost;
     }
-    
-    
-    public String returnInfo(){
-        return "Pipe of Length " + this.length + "m <br> Diameter " + this.diameter + "in <br> Cost = " + this.totalCost;
+
+    public String returnInfo() {
+        return "Pipe of Length " + this.length + "m <br> Diameter " + this.diameter + "in <br> Cost = £" + this.totalCost;
     }
-    
+
 }

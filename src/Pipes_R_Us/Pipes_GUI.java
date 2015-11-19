@@ -26,6 +26,8 @@ public class Pipes_GUI extends javax.swing.JFrame {
     private int numOfPipes;
     ArrayList<Pipe> userOrder = new ArrayList<Pipe>();
     private String orderText = "";
+    private boolean orderSubmitted;
+    private double orderCost;
 
     public Pipes_GUI() {
         initComponents();
@@ -211,12 +213,13 @@ public class Pipes_GUI extends javax.swing.JFrame {
 
     private void addOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOrderActionPerformed
         orderProcess();
-        //need to reset the window
+        resetWindow();
     }//GEN-LAST:event_addOrderActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+        orderSubmitted = true;
         orderProcess();
-        //need to show that the order is finialised
+        resetWindow();
     }//GEN-LAST:event_submitActionPerformed
 
     public void getInputs() {
@@ -229,8 +232,8 @@ public class Pipes_GUI extends javax.swing.JFrame {
         chem = Chem.isSelected();
         rein = Rein.isSelected();
     }
-    
-    public void orderProcess()  {
+
+    public void orderProcess() {
         this.getInputs();
         this.calcType();
         for (int i = 0; i < userOrder.size(); i++) {
@@ -259,13 +262,30 @@ public class Pipes_GUI extends javax.swing.JFrame {
             orderBox.setText("<html>" + orderText + "<br>Not A Valid Pipe <br>Please adjust your order" + "</html>");//not sure why not working, will need to fix
         }
     }
-    
+
     public void orderWindowUpdate() {
-        for (int i = 0; i < userOrder.size(); i++){
+        orderText = "";
+        orderCost = 0.0;
+        for (int i = 0; i < userOrder.size(); i++) {
             orderText = orderText + "<br> <br>" + userOrder.get(i).returnInfo();
-            
+            orderCost = orderCost + userOrder.get(i).getCost();
         }
-        orderBox.setText("<html>User Order" + "<br>" + orderText + "</html>");
+        if (orderSubmitted) {
+            orderBox.setText("<html>User Order" + "<br>" + orderText + "<br> Total Cost = £" + orderCost + "</html>");
+        } else {
+            orderBox.setText("<html>User Order" + "<br>" + orderText + "</html>");
+        }
+    }
+
+    public void resetWindow() {
+        diameterInput.setText("");
+        lengthInput.setText("");
+        noOfPipesInput.setText("");
+        colourDropDown.setSelectedIndex(0);
+        gradeSelection.setSelectedIndex(0);
+        Insulation.setSelected(false);
+        Chem.setSelected(false);
+        Rein.setSelected(false);
     }
 
     /**
