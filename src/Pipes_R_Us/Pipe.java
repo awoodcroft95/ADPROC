@@ -9,7 +9,7 @@ package Pipes_R_Us;
  *
  * @author UP730799 &
  */
-public class Pipe {
+public abstract class Pipe {
     private double length;
     private double diameter;
     private double radius; //calculated in object
@@ -68,11 +68,7 @@ public class Pipe {
 
 // inherited in indiviual pipe classes
     public void calculateCost() {
-        double lengthInch = this.length * 39.37;
-        radius = this.diameter / 2;
-        double innerRadius = radius * 0.9;
-        pipeVolume = (((Math.PI * Math.pow(radius, 2)) * lengthInch) - ((Math.PI * Math.pow(innerRadius, 2)) * lengthInch));
-        System.out.println(pipeVolume);
+        calcVolume();
         switch (grade) {
             case 1:
                 cost = 0.3 * pipeVolume;
@@ -121,6 +117,13 @@ public class Pipe {
 
     public double getCost() {
         return this.totalCost;
+    }
+    
+    public void calcVolume() {
+        double lengthInch = this.length * 39.37;
+        radius = this.diameter / 2;
+        double innerRadius = radius * 0.9;
+        pipeVolume = (((Math.PI * Math.pow(radius, 2)) * lengthInch) - ((Math.PI * Math.pow(innerRadius, 2)) * lengthInch));
     }
     
     
