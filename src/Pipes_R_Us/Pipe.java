@@ -112,6 +112,8 @@ public abstract class Pipe {
             totalCost = addedCost + totalCost;
         }
         totalCost = totalCost * numOfPipes;
+        totalCost = Math.round(totalCost * 100);
+        totalCost = totalCost / 100;
 
     }
 
@@ -130,5 +132,5 @@ public abstract class Pipe {
     public String returnInfo(){
         return "Pipe of Length " + this.length + "m <br> Diameter " + this.diameter + "in <br> Cost = " + this.totalCost;
     }
-    
+
 }
