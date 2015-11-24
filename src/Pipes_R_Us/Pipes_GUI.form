@@ -74,8 +74,8 @@
                               <Component id="jScrollPane9" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="statusBox" min="-2" pref="218" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="statusBox" min="-2" pref="279" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -138,9 +138,8 @@
                           <Component id="submit" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="addOrder" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="statusBox" min="-2" pref="36" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="statusBox" pref="72" max="32767" attributes="0"/>
                   </Group>
                   <Component id="orderBox" max="32767" attributes="0"/>
               </Group>
@@ -286,7 +285,9 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="autoscrolls" type="boolean" value="true"/>
+        <Property name="horizontalTextPosition" type="int" value="2"/>
         <Property name="opaque" type="boolean" value="true"/>
+        <Property name="verticalTextPosition" type="int" value="1"/>
       </Properties>
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Status Box"/>

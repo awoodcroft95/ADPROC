@@ -117,7 +117,9 @@ public class Pipes_GUI extends javax.swing.JFrame {
 
         statusBox.setBackground(new java.awt.Color(255, 255, 255));
         statusBox.setAutoscrolls(true);
+        statusBox.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         statusBox.setOpaque(true);
+        statusBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,8 +165,8 @@ public class Pipes_GUI extends javax.swing.JFrame {
                                 .addGap(80, 80, 80)
                                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(statusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap()
+                                .addComponent(statusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(orderBox, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -212,9 +214,8 @@ public class Pipes_GUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(submit)
                             .addComponent(addOrder))
-                        .addGap(18, 18, 18)
-                        .addComponent(statusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 29, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(statusBox, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE))
                     .addComponent(orderBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -258,12 +259,34 @@ public class Pipes_GUI extends javax.swing.JFrame {
         rein = Rein.isSelected();
     }
 
+    public boolean validInputs() {
+        int nVC = 0; // nVC stand for not vaild count, it counts the number of non valid inputs if this is greater than 0 then this method returns false
+        if (diameter < 0.1 || diameter > 30) {
+            nVC = nVC + 1;
+        }
+        if (length < 0.05 || length > 20) {
+            nVC = nVC + 1;
+        }
+        if (numOfPipes < 1) {
+            nVC = nVC + 1;
+        }
+        if (nVC >= 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public void orderProcess() {
         this.getInputs();
-        this.calcType();
-        for (int i = 0; i < userOrder.size(); i++) {
-            userOrder.get(i).calculateCost();
-            orderWindowUpdate();
+        if (validInputs()) {
+            this.calcType();
+            for (int i = 0; i < userOrder.size(); i++) {
+                userOrder.get(i).calculateCost();
+                orderWindowUpdate();
+            }
+        } else {
+            statusBox.setText("Please enter valid inputs for diameter, length and number of pipes");
         }
     }
 

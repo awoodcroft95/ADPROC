@@ -88,9 +88,7 @@ public abstract class Pipe {
             default:
                 break;
         }
-        System.out.println(cost);
         totalCost = cost;
-        System.out.println(totalCost);
         addedCost = 0;
         if (colour == 1) {
             addedCost = (cost * 0.12);
