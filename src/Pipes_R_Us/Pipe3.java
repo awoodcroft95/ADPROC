@@ -16,14 +16,13 @@ public class Pipe3 extends Pipe {
     private double radius; //calculated in object
     private int grade;
     private boolean insu;
-    private boolean rein;
     private boolean chem;
     private int colour;
     private double pipeVolume;
     private double cost;
     private double totalCost;
     private double addedCost;
-    public int numOfPipes;
+    private int numOfPipes;
     
     public Pipe3(int gradeIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn, int numIn) {
         super(gradeIn, chemIn, colourIn, lengthIn, diameterIn, numIn);

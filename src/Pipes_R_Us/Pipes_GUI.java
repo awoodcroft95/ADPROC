@@ -63,6 +63,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         orderBox = new javax.swing.JLabel();
+        statusBox = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Piper Order");
@@ -111,7 +112,12 @@ public class Pipes_GUI extends javax.swing.JFrame {
         orderBox.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         orderBox.setText("User Order");
         orderBox.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        orderBox.setAutoscrolls(true);
         orderBox.setOpaque(true);
+
+        statusBox.setBackground(new java.awt.Color(255, 255, 255));
+        statusBox.setAutoscrolls(true);
+        statusBox.setOpaque(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,40 +126,46 @@ public class Pipes_GUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel5))
-                                .addGap(24, 24, 24))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(gradeSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(colourDropDown, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(Insulation)
+                                        .addComponent(Chem)
+                                        .addComponent(lengthInput)
+                                        .addComponent(diameterInput, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Rein))
+                                .addGap(69, 69, 69))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel8)
                                     .addComponent(submit)
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel7))
-                                .addGap(22, 22, 22)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(noOfPipesInput, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(addOrder))
+                                .addGap(31, 31, 31))))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addOrder)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(gradeSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(colourDropDown, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Insulation)
-                                .addComponent(Chem)
-                                .addComponent(noOfPipesInput)
-                                .addComponent(lengthInput)
-                                .addComponent(diameterInput, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Rein))
-                        .addGap(27, 27, 27)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(statusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(orderBox, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -192,34 +204,47 @@ public class Pipes_GUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Chem, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(noOfPipesInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(noOfPipesInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(submit, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(addOrder, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(25, 25, 25))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(orderBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(submit)
+                            .addComponent(addOrder))
+                        .addGap(18, 18, 18)
+                        .addComponent(statusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 29, Short.MAX_VALUE))
+                    .addComponent(orderBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         diameterInput.getAccessibleContext().setAccessibleName("Diamater Input");
+        statusBox.getAccessibleContext().setAccessibleName("Status Box");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void addOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOrderActionPerformed
-        orderProcess();
-        resetWindow();
+        if (isEmpty()) {
+            statusBox.setText("Please enter values for length, diameter and number of pipes before adding an order.");
+        } else {
+            orderProcess();
+            resetWindow();
+        }
     }//GEN-LAST:event_addOrderActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         orderSubmitted = true;
-        orderProcess();
-        resetWindow();
+        if (isEmpty()) {
+            addOrder.setEnabled(false);
+            submit.setEnabled(false);
+        } else {
+            orderProcess();
+            resetWindow();
+            addOrder.setEnabled(false);
+            submit.setEnabled(false);
+        }
     }//GEN-LAST:event_submitActionPerformed
 
     public void getInputs() {
@@ -242,24 +267,41 @@ public class Pipes_GUI extends javax.swing.JFrame {
         }
     }
 
+    public boolean isEmpty() {
+        if ("".equals(diameterInput.getText())) {
+            return true;
+        } else if ("".equals(lengthInput.getText())) {
+            return true;
+        } else if ("".equals(noOfPipesInput.getText())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void calcType() {
         if ((grade <= 3 & grade > 0) & (colour == 0) & (!insu) & (!rein)) {
             Pipe1 newPipe = new Pipe1(grade, chem, length, diameter, numOfPipes);
             userOrder.add(newPipe);
+            this.statusBoxUpdate();
         } else if ((grade <= 4 & grade > 1) & (colour <= 1) & (!insu) & (!rein)) {
             Pipe2 newPipe = new Pipe2(grade, chem, colour, length, diameter, numOfPipes);
             userOrder.add(newPipe);
+            this.statusBoxUpdate();
         } else if ((grade <= 5 & grade > 1) & (colour <= 2) & (!insu) & (!rein)) {
             Pipe3 newPipe = new Pipe3(grade, chem, colour, length, diameter, numOfPipes);
             userOrder.add(newPipe);
+            this.statusBoxUpdate();
         } else if ((grade <= 5 & grade > 1) & (colour <= 2) & (!rein)) {
             Pipe4 newPipe = new Pipe4(grade, insu, chem, colour, length, diameter, numOfPipes);
             userOrder.add(newPipe);
+            this.statusBoxUpdate();
         } else if ((grade <= 5 & grade > 2) & (colour <= 2)) {
             Pipe5 newPipe = new Pipe5(grade, insu, rein, chem, colour, length, diameter, numOfPipes);
             userOrder.add(newPipe);
+            this.statusBoxUpdate();
         } else {
-            orderBox.setText("<html>" + orderText + "<br>Not A Valid Pipe <br>Please adjust your order" + "</html>");//not sure why not working, will need to fix
+            statusBox.setText("<html>Not A Valid Pipe,  Please adjust your order </html>");
         }
     }
 
@@ -275,6 +317,10 @@ public class Pipes_GUI extends javax.swing.JFrame {
         } else {
             orderBox.setText("<html>User Order" + "<br>" + orderText + "</html>");
         }
+    }
+
+    public void statusBoxUpdate() {
+        statusBox.setText("Order Added");
     }
 
     public void resetWindow() {
@@ -344,6 +390,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
     private javax.swing.JTextField lengthInput;
     private javax.swing.JTextField noOfPipesInput;
     private javax.swing.JLabel orderBox;
+    private javax.swing.JLabel statusBox;
     private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }

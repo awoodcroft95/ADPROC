@@ -21,7 +21,7 @@ public class Pipe2 extends Pipe {
     private double cost;
     private double totalCost;
     private double addedCost;
-    public int numOfPipes;
+    private int numOfPipes;
     
     
     public Pipe2(int gradeIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn, int numIn) {

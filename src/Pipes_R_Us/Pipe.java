@@ -22,7 +22,7 @@ public abstract class Pipe {
     private double cost;
     private double totalCost;
     private double addedCost;
-    public int numOfPipes;
+    private int numOfPipes;
 
     public Pipe() {
     }

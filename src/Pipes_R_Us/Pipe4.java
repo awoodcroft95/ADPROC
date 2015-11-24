@@ -22,7 +22,7 @@ public class Pipe4 extends Pipe {
     private double cost;
     private double totalCost;
     private double addedCost;
-    public int numOfPipes;
+    private int numOfPipes;
     
     public Pipe4(int gradeIn, boolean insuIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn, int numIn) {
         super(gradeIn, insuIn, chemIn, colourIn, lengthIn, diameterIn, numIn);
