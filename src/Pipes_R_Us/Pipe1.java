@@ -7,7 +7,7 @@ package Pipes_R_Us;
 
 /**
  *
- * @author UP730799
+ * @author UP730799 & UP733640
  */
 public class Pipe1 extends Pipe {
 
@@ -22,6 +22,14 @@ public class Pipe1 extends Pipe {
     private double addedCost;
     private int numOfPipes;
     
+    /**
+     *
+     * @param gradeIn
+     * @param chemIn
+     * @param lengthIn
+     * @param diameterIn
+     * @param numIn
+     */
     public Pipe1(int gradeIn, boolean chemIn, double lengthIn, double diameterIn, int numIn) {
         super(gradeIn, chemIn, lengthIn, diameterIn, numIn);
         this.grade = gradeIn;
@@ -33,6 +41,10 @@ public class Pipe1 extends Pipe {
         
     }
     
+    /**
+     *
+     * @return
+     */
     public double pipeCost(){
         super.calculateCost();
         return super.getCost();

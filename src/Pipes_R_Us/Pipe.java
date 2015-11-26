@@ -7,7 +7,7 @@ package Pipes_R_Us;
 
 /**
  *
- * @author UP730799 &
+ * @author UP730799 & UP733640
  */
 public abstract class Pipe {
     private double length;
@@ -24,9 +24,23 @@ public abstract class Pipe {
     private double addedCost;
     private int numOfPipes;
 
+    /**
+     *
+     */
     public Pipe() {
     }
 
+    /**
+     *
+     * @param gradeIn
+     * @param insuIn
+     * @param reinIn
+     * @param chemIn
+     * @param colourIn
+     * @param lengthIn
+     * @param diameterIn
+     * @param numIn
+     */
     public Pipe(int gradeIn, boolean insuIn, boolean reinIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn, int numIn) { // general pipes/pipe parent
         this.grade = gradeIn;
         this.insu = insuIn;
@@ -39,6 +53,15 @@ public abstract class Pipe {
         cost = 0;
     }
 
+    /**
+     *
+     * @param gradeIn
+     * @param chemIn
+     * @param colourIn
+     * @param lengthIn
+     * @param diameterIn
+     * @param numIn
+     */
     public Pipe(int gradeIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn, int numIn) {   //pipe 2,3
         this.grade = gradeIn;
         this.chem = chemIn;
@@ -48,6 +71,14 @@ public abstract class Pipe {
         this.numOfPipes = numIn;
     }
 
+    /**
+     *
+     * @param gradeIn
+     * @param chemIn
+     * @param lengthIn
+     * @param diameterIn
+     * @param numIn
+     */
     public Pipe(int gradeIn, boolean chemIn, double lengthIn, double diameterIn, int numIn) {  //pipe1
         this.grade = gradeIn;
         this.chem = chemIn;
@@ -56,6 +87,16 @@ public abstract class Pipe {
         this.numOfPipes = numIn;
     }
 
+    /**
+     *
+     * @param gradeIn
+     * @param insuIn
+     * @param chemIn
+     * @param colourIn
+     * @param lengthIn
+     * @param diameterIn
+     * @param numIn
+     */
     public Pipe(int gradeIn, boolean insuIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn, int numIn) { // pipe4
         this.grade = gradeIn;
         this.insu = insuIn;
@@ -67,7 +108,11 @@ public abstract class Pipe {
     }
 
 // inherited in indiviual pipe classes
-    public void calculateCost() {
+
+    /**
+     *
+     */
+        public void calculateCost() {
         calcVolume();
         switch (grade) {
             case 1:
@@ -115,10 +160,17 @@ public abstract class Pipe {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public double getCost() {
         return this.totalCost;
     }
     
+    /**
+     *
+     */
     public void calcVolume() {
         double lengthInch = this.length * 39.37;
         radius = this.diameter / 2;
@@ -126,7 +178,10 @@ public abstract class Pipe {
         pipeVolume = (((Math.PI * Math.pow(radius, 2)) * lengthInch) - ((Math.PI * Math.pow(innerRadius, 2)) * lengthInch));
     }
     
-    
+    /**
+     *
+     * @return
+     */
     public String returnInfo(){
         return "Pipe of Length " + this.length + "m <br> Diameter " + this.diameter + "in <br> Cost = " + this.totalCost;
     }
