@@ -34,12 +34,6 @@ public class Pipe2 extends Pipe {
      */
     public Pipe2(int gradeIn, boolean chemIn, int colourIn, double lengthIn, double diameterIn, int numIn) {
         super(gradeIn, chemIn, colourIn, lengthIn, diameterIn, numIn);
-        this.grade = gradeIn;
-        this.chem = chemIn;
-        this.colour = colourIn;
-        this.length = lengthIn;
-        this.diameter = diameterIn;
-        this.numOfPipes = numIn;
         cost = 0;
     }
     

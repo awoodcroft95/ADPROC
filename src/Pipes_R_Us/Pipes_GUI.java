@@ -231,6 +231,11 @@ public class Pipes_GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     *
+     * @param evt add Order button pressed, updates the status box if empty,
+     * otherwise it updates the order and resets the window.
+     */
     private void addOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOrderActionPerformed
         if (isEmpty()) {
             statusBox.setText("Please enter values for length, diameter and number of pipes before adding an order.");
@@ -240,6 +245,14 @@ public class Pipes_GUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addOrderActionPerformed
 
+    /**
+     * The method used for when the submit button is pressed. Locks out the
+     * buttons ones pressed if there are inputs then if will process the final
+     * order.
+     *
+     * @param evt submit button pressed locks out the buttons and updates the
+     * order in the order window
+     */
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         orderSubmitted = true;
         if (isEmpty()) {
@@ -254,28 +267,36 @@ public class Pipes_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_submitActionPerformed
 
     /**
-     * Gets the user inputs from the GUI so they can be used to create the pipe objects.
+     * Gets the user inputs from the GUI so they can be used to create the pipe
+     * objects. If not numeric values are inputted for diameter length and
+     * number of pipes it will send an error to the system and tell the user to
+     * input a valid value.
      */
     public void getInputs() {
-        diameter = Double.parseDouble(diameterInput.getText());
-        length = Double.parseDouble(lengthInput.getText());
+        try {
+            diameter = Double.parseDouble(diameterInput.getText());
+            length = Double.parseDouble(lengthInput.getText());
+            numOfPipes = Integer.parseInt(noOfPipesInput.getText());
+        } catch (Exception e) {
+            System.err.println(e);
+        }
         colour = colourDropDown.getSelectedIndex();
         grade = gradeSelection.getSelectedIndex() + 1;
-        numOfPipes = Integer.parseInt(noOfPipesInput.getText());
         insu = Insulation.isSelected();
         chem = Chem.isSelected();
         rein = Rein.isSelected();
     }
 
     /**
-     * This method checks whether the user inputs are within the preset ranges defined by us.
-     * It uses a count system, the count has to be 0 for the return to be true
-     * if the count is one or more it returns false showing the inputs are not within the range.
-     * 
-     * @return returns whether or not the inputs are within the valid limits(which we have defined)
-     *          These limits are the diameter being between 0.1 and 30 inches
-     *          length between 0.05 and 20 meters
-     *          and number of pipes being at least one.
+     * This method checks whether the user inputs are within the preset ranges
+     * defined by us. It uses a count system, the count has to be 0 for the
+     * return to be true if the count is one or more it returns false showing
+     * the inputs are not within the range.
+     *
+     * @return returns whether or not the inputs are within the valid
+     * limits(which we have defined These limits are the diameter being between
+     * 0.1 and 30 inches length between 0.05 and 20 meters and number of pipes
+     * being at least one.
      */
     public boolean validInputs() {
         int nVC = 0; // nVC stand for not vaild count, it counts the number of non valid inputs if this is greater than 0 then this method returns false
@@ -296,11 +317,11 @@ public class Pipes_GUI extends javax.swing.JFrame {
     }
 
     /**
-     * this processes the inputs given by the user
-     * then calculates the type of pipe they want using the calcType method
-     * gets the inputs from the GUI then checks if they are valid using the validInputs method
-     * if they are valid then it will calculate the cost for each order then
-     * update the order window which shows the cost of each type of pipe they are ordering
+     * this processes the inputs given by the user then calculates the type of
+     * pipe they want using the calcType method gets the inputs from the GUI
+     * then checks if they are valid using the validInputs method if they are
+     * valid then it will calculate the cost for each order then update the
+     * order window which shows the cost of each type of pipe they are ordering
      * if they are not valid then it will tell the user
      */
     public void orderProcess() {
@@ -312,15 +333,17 @@ public class Pipes_GUI extends javax.swing.JFrame {
                 orderWindowUpdate();
             }
         } else {
-            statusBox.setText("Please enter valid inputs for diameter, length and number of pipes");
+            statusBox.setText("<html>Please enter valid inputs for diameter,<br> length and number of pipes</html>");
         }
     }
 
     /**
-     * This method checks if the GUI input boxes are empty or not
-     * If any of them are empty then it returns false as this would cause an error in creating the pipe object.
-     * 
-     * @return
+     * This method checks if the GUI input boxes are empty or not If any of them
+     * are empty then it returns false as this would cause an error in creating
+     * the pipe object.
+     *
+     * @return returns true if any input is empty false if they all have values
+     * in.
      */
     public boolean isEmpty() {
         if ("".equals(diameterInput.getText())) {
@@ -335,10 +358,12 @@ public class Pipes_GUI extends javax.swing.JFrame {
     }
 
     /**
-     * This method calculates the Type of the pipe then generates that pipe and adds it to an array list containing all the pipes in the users order.
-     * It also updates the status box which tells the user if their selection has been added or not.
-     * If their inputs are not valid for a pipe that can be made it will notify the user and not add the order.
-     * 
+     * This method calculates the Type of the pipe then generates that pipe and
+     * adds it to an array list containing all the pipes in the users order. It
+     * also updates the status box which tells the user if their selection has
+     * been added or not. If their inputs are not valid for a pipe that can be
+     * made it will notify the user and not add the order.
+     *
      */
     public void calcType() {
         validType = true;
@@ -363,14 +388,15 @@ public class Pipes_GUI extends javax.swing.JFrame {
             userOrder.add(newPipe);
             this.statusBoxUpdate();
         } else {
-            statusBox.setText("<html>Not A Valid Pipe,  Please adjust your order </html>");
+            statusBox.setText("<html>Not A Valid Pipe, <br>  Please adjust your order </html>");
             validType = false;
         }
     }
 
     /**
-     * This method updates the order window which shows all the pipes the user has ordered.
-     * 
+     * This method updates the order window which shows all the pipes the user
+     * has ordered.
+     *
      */
     public void orderWindowUpdate() {
         orderText = "";
@@ -387,14 +413,15 @@ public class Pipes_GUI extends javax.swing.JFrame {
     }
 
     /**
-     *
+     * Updates the status box to tell the user their order has been added.
      */
     public void statusBoxUpdate() {
         statusBox.setText("Order Added");
     }
 
     /**
-     *
+     * Resets the window so a new order can be added without having ro remove
+     * the current data manually
      */
     public void resetWindow() {
         diameterInput.setText("");

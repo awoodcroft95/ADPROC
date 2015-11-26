@@ -10,22 +10,23 @@ package Pipes_R_Us;
  * @author UP730799 & UP733640
  */
 public abstract class Pipe {
-    private double length;
-    private double diameter;
-    private double radius; //calculated in object
-    private int grade;
-    private boolean insu;
-    private boolean rein;
-    private boolean chem;
-    private int colour;
-    private double pipeVolume;
-    private double cost;
-    private double totalCost;
-    private double addedCost;
-    private int numOfPipes;
+
+    protected double length;
+    protected double diameter;
+    protected double radius; //calculated in object
+    protected int grade;
+    protected boolean insu;
+    protected boolean rein;
+    protected boolean chem;
+    protected int colour;
+    protected double pipeVolume;
+    protected double cost;
+    protected double totalCost;
+    protected double addedCost;
+    protected int numOfPipes;
 
     /**
-     *
+     * Empty Constructor
      */
     public Pipe() {
     }
@@ -107,12 +108,10 @@ public abstract class Pipe {
         this.numOfPipes = numIn;
     }
 
-// inherited in indiviual pipe classes
-
     /**
-     *
+     * Used in pipe classes to calculate cost.
      */
-        public void calculateCost() {
+    public void calculateCost() {
         calcVolume();
         switch (grade) {
             case 1:
@@ -162,14 +161,14 @@ public abstract class Pipe {
 
     /**
      *
-     * @return
+     * @return returns the total cost of the pipe.
      */
     public double getCost() {
         return this.totalCost;
     }
-    
+
     /**
-     *
+     * Calculates the volume of the pipe, used in the calculateCost method.
      */
     public void calcVolume() {
         double lengthInch = this.length * 39.37;
@@ -177,12 +176,13 @@ public abstract class Pipe {
         double innerRadius = radius * 0.9;
         pipeVolume = (((Math.PI * Math.pow(radius, 2)) * lengthInch) - ((Math.PI * Math.pow(innerRadius, 2)) * lengthInch));
     }
-    
+
     /**
      *
-     * @return
+     * @return returns some information about the pipe as a string to be used in
+     * the Pipes_GUI
      */
-    public String returnInfo(){
+    public String returnInfo() {
         return "Pipe of Length " + this.length + "m <br> Diameter " + this.diameter + "in <br> Cost = " + this.totalCost;
     }
 
