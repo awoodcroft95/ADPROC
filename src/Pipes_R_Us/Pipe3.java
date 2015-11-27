@@ -27,8 +27,10 @@ public class Pipe3 extends Pipe {
     }
     
     /**
+     * Uses the inherited methods, calculateCost and getCost from the Pipe
+     * abstract class.
      *
-     * @return
+     * @return calculates and returns the cost of the pipe order.
      */
     public double pipeCost(){
         super.calculateCost();

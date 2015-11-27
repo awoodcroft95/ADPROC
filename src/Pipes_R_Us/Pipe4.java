@@ -11,7 +11,6 @@ package Pipes_R_Us;
  */
 public class Pipe4 extends Pipe {
 
-    
     /**
      *
      * @param gradeIn
@@ -26,14 +25,16 @@ public class Pipe4 extends Pipe {
         super(gradeIn, insuIn, chemIn, colourIn, lengthIn, diameterIn, numIn);
         cost = 0;
     }
-    
+
     /**
+     * Uses the inherited methods, calculateCost and getCost from the Pipe
+     * abstract class.
      *
-     * @return
+     * @return calculates and returns the cost of the pipe order.
      */
-    public double pipeCost(){
+    public double pipeCost() {
         super.calculateCost();
         return super.getCost();
     }
-    
+
 }

@@ -11,20 +11,19 @@ package Pipes_R_Us;
  */
 public abstract class Pipe {
 
-    protected double length;
-    protected double diameter;
-    protected double radius; //calculated in object
-    protected int grade;
-    protected boolean insu;
-    protected boolean rein;
-    protected boolean chem;
-    protected int colour;
-    protected double pipeVolume;
-    protected double cost;
-    protected double totalCost;
-    protected double addedCost;
-    protected int numOfPipes;
-
+    protected double length; //user input for the length of pipe
+    protected double diameter; //user input for the diameter of pipe
+    protected double radius; // radius of the pipe, calculated in calcVolume method
+    protected int grade; //user input for the grade of plasic for the pipe
+    protected boolean insu; //whether or not the user has selected for the pipe to have insulation
+    protected boolean rein; //whether or not the user has selected for the pipe to have reinforcement
+    protected boolean chem; //whether or not the user has selected for the pipe to have chemical resistance
+    protected int colour; //how many colours the pipe has
+    protected double pipeVolume; //volume of the pipe, calculated in the calcVolume method
+    protected double cost; //base cost fo the pipe without additions, calculated in calculateCost method
+    protected double totalCost; //total cost of the pipe with additions, calculated in calculateCost method
+    protected double addedCost; //the added costs which are added to the base cost of the piep 
+    protected int numOfPipes; //number of pipes of this spec in this order, used to calculate the total cost
     /**
      * Empty Constructor
      */

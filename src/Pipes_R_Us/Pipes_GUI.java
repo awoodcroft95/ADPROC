@@ -420,7 +420,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
     }
 
     /**
-     * Resets the window so a new order can be added without having ro remove
+     * Resets the window so a new order can be added without having to remove
      * the current data manually
      */
     public void resetWindow() {

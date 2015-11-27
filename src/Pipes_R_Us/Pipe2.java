@@ -11,20 +11,10 @@ package Pipes_R_Us;
  */
 public class Pipe2 extends Pipe {
 
-    private double length;
-    private double diameter;
-    private double radius; //calculated in object
-    private int grade;
-    private boolean chem;
-    private int colour;
-    private double pipeVolume;
-    private double cost;
-    private double totalCost;
-    private double addedCost;
-    private int numOfPipes;
     
     /**
-     *
+     * Constructor for Pipe Type 2
+     * 
      * @param gradeIn
      * @param chemIn
      * @param colourIn
@@ -38,8 +28,10 @@ public class Pipe2 extends Pipe {
     }
     
     /**
+     * Uses the inherited methods, calculateCost and getCost from the Pipe
+     * abstract class.
      *
-     * @return
+     * @return calculates and returns the cost of the pipe order.
      */
     public double pipeCost(){
         super.calculateCost();

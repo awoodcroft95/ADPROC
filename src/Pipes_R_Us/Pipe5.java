@@ -32,10 +32,10 @@ public class Pipe5 extends Pipe {
     }
     
     /**
-     * Calculates then returns the cost of the pipe.
-     * Uses the inherited methods of calculateCost and getCost from the Pipe
+     * Uses the inherited methods, calculateCost and getCost from the Pipe
      * abstract class.
-     * @return the cost of the pipe
+     *
+     * @return calculates and returns the cost of the pipe order.
      */
     public double pipeCost(){
         super.calculateCost();
