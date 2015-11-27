@@ -334,7 +334,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
     public void orderProcess() {
         this.getInputs();
         this.calcType();
-        if (userOrder.size() == 9) {
+        if (userOrder.size() == 8) {
             statusBox.setText("Max number of orders reached.");
             addOrder.setEnabled(false);
             submit.setEnabled(false);
