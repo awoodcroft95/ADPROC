@@ -238,7 +238,7 @@ public class Pipes_GUI extends javax.swing.JFrame {
      */
     private void addOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOrderActionPerformed
         if (isEmpty()) {
-            statusBox.setText("Please enter values for length, diameter and number of pipes before adding an order.");
+            statusBox.setText("<html>Please enter values for length, diameter<br> and number of pipes before adding an order.</html>");
         } else {
             orderProcess();
             resetWindow();
